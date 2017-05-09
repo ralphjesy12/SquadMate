@@ -41,7 +41,7 @@
     "build": "cross-env NODE_ENV=production browserify -e www/src/main.js | uglifyjs -c warnings=false -m > www/dist/build.js & cordova build --release --device --target=",
     "lint": "eslint --ext .js,.vue www/src www/test/unit",
     "test": "karma start karma.conf.js",
-    "prepare": "cordova platform add",
+    "prepare": "cordova platform add android",
     "ios": "cordova run ios",
     "android": "cordova run android",
     "compile": "browserify -e www/src/main.js -o www/dist/build.js & cordova compile --debug --target=",
@@ -57,10 +57,11 @@
   },
   "engine": "node >= 5.0.0",
   "dependencies": {
+    "cordova-android": "^6.2.3",
     "phonegap": "^6.2.1",
     "vue": "^1.0.0",
-    "vuex": "^0.6.3",
-    "vue-resource": "^0.7.0"
+    "vue-resource": "^0.7.0",
+    "vuex": "^0.6.3"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

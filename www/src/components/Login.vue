@@ -1,10 +1,9 @@
 <template>
     <section id="login" class="hero is-fullheight is-dark is-primary">
         <div class="hero-body">
-            <div class="container">
-                <h3 class="title is-2">
-                    Login Now
-                </h3>
+            <div class="container has-text-centered">
+                <img src="/img/squadmate.png" />
+                <hr />
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input" type="email" placeholder="Email Address">
@@ -26,12 +25,16 @@
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button class="button" type="submit">
+                        <a class="button is-fullwidth is-info is-rounded" href="#">
                             Login
-                        </button>
-                        <button class="button is-dark" type="reset">
-                            Reset
-                        </button>
+                        </a>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <a class="button is-fullwidth is-info is-inverted is-outlined is-rounded" href="#">
+                            Sign Up
+                        </a>
                     </p>
                 </div>
             </div>
