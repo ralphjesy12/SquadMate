@@ -19,12 +19,21 @@
 <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bulma.css">
+<link rel="stylesheet" href="css/vue2-animate.min.css">
 <link rel="stylesheet" href="css/app.css">
 <title>SquadMate</title>
 </head>
 <body>
-    <app></app>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="dist/build.js"></script>
+    <div id="app">
+        <transition
+        name="slide"
+        enter-active-class="slideInRight"
+        leave-active-class="slideOutLeft"
+        >
+        <router-view></router-view>
+    </transition>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="dist/build.js"></script>
 </body>
 </html>

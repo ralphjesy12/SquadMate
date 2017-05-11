@@ -10,9 +10,6 @@
                         <span class="icon is-left">
                             <i class="fa fa-envelope"></i>
                         </span>
-                        <!-- <span class="icon is-small is-right">
-                            <i class="fa fa-check"></i>
-                        </span> -->
                     </p>
                 </div>
                 <div class="field">
@@ -25,14 +22,14 @@
                 </div>
                 <div class="field">
                     <p class="control">
-                        <a class="button is-fullwidth is-info is-rounded" href="#">
+                        <a class="button is-fullwidth is-info is-rounded" href="#" @click="authenticate" :class="{ 'is-loading' : authenticating }">
                             Login
                         </a>
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <a class="button is-fullwidth is-info is-inverted is-outlined is-rounded" href="#">
+                        <a class="button is-fullwidth is-info is-inverted is-outlined is-rounded" href="#" @click.prevent="goSignup">
                             Sign Up
                         </a>
                     </p>
@@ -51,11 +48,31 @@
         </div>
     </section>
 </template>
+
+
 <script>
+
+import Router from './Router.js';
+
 export default {
     data () {
         return {
+            authenticating : false
+        }
+    },
+    methods: {
+        goSignup: function(){
+            Router.push('signup');
+        },
+        authenticate: function(){
+            var self = this;
 
+            self.authenticating = true;
+
+            // Mock Loading
+            setTimeout(function(){
+                Router.push('dashboard');
+            },2000);
         }
     }
 }
